@@ -2,7 +2,7 @@
 
 Academic project: an end-to-end **log file monitoring and analysis system** that can run locally on a laptop and conceptually scale to a **Hadoop + Spark** big-data cluster.
 
-It reads raw web server logs, parses and cleans them in Python, computes key metrics (traffic, errors, endpoints, IPs), and shows everything in an interactive **Streamlit dashboard**.  
+It reads raw web server logs, parses and cleans them in Python, computes key metrics **(traffic, errors, endpoints, IPs)**, and shows everything in an interactive **Streamlit dashboard**.  
 Optionally, it can connect to a backend API in front of a Hadoop/Spark cluster to pull logs from HDFS and submit distributed jobs.
 
 ---
@@ -29,15 +29,6 @@ Optionally, it can connect to a backend API in front of a Hadoop/Spark cluster t
   - Reads from local files **or** HDFS (via backend)
   - `backend_connector.py` and `api_server.py` show how to plug in a real Hadoop/Spark cluster behind the UI
 
-- **AI assistant (optional, via OpenAI)**
-  - Ask natural-language questions like:
-    - “Why did errors spike at 3 PM?”
-    - “Which pages are the slowest or most problematic?”
-    - “Is there anything unusual in today’s traffic?”
-  - The model reads the aggregated metrics, not the raw file, so it stays efficient and cheap
-
-> 💡 Even if you run everything locally (without an actual cluster), the project still demonstrates *how* a real SRE / DevOps observability tool would be designed.
-
 ---
 
 ## 🧱 Architecture
@@ -63,13 +54,22 @@ Optionally, it can connect to a backend API in front of a Hadoop/Spark cluster t
 # 📸 Screenshots
 
 ### Dashboard – Summary View
-![Dashboard Summary](screenshots/dashboard_summary.png)
+![Dashboard Summary](screenshots/Dashboard.png)
 
 ### Error Analysis
-![Error Analysis](screenshots/error_analysis.png)
+![Error Analysis](screenshots/Error_1.png)
+![Error Analysis](screenshots/Error_2.png)
 
-### AI Assistant
-![AI Assistant](screenshots/ai_assistant.png)
+### Traffic Patterns
+![Traffic Patterns](screenshots/Traffic_1.png)
+![Traffic Patterns](screenshots/Traffic_2.png)
+
+### Statistics
+![Statistics](screenshots/Statistics_1.png)
+![Statistics](screenshots/Statistics_2.png)
+
+### All Logs
+![All Logs](screenshots/All_log.png)
 
 ### Repository Structure
 ```text
